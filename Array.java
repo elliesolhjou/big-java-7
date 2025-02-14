@@ -54,6 +54,23 @@ public class Array{
         intValues[size-1] = 0;
         size--;
         System.out.println(Arrays.toString(intValues));
+
+        // inserting an element in fixed -size array
+        // since we can't change size of array
+        // use a variable curent size to show where we last modified array
+        // length by putting zero as element in array
+        System.out.println(intValues.length);
+        System.out.println(size);
+        int newElement = 4321;
+        if (size < intValues.length){
+            size++;
+            int changeTarget = 6;
+            for (int i=size-1;i>changeTarget; i-- ){
+                intValues[i] = intValues[i-1];
+            }
+            intValues[changeTarget] = newElement;
+        }
+        System.out.println(Arrays.toString(intValues));
     }
 }
 
