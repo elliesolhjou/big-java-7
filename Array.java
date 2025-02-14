@@ -43,7 +43,17 @@ public class Array{
         System.out.println("positions is : "+ position);
         System.out.println(intValues.length);
         
-
+        //removing an element from partially filled array
+        // removing intValues[4]
+        int size = intValues.length;
+        int removeTargetPosition = 4;
+        System.out.println(Arrays.toString(intValues));
+        for (int i= removeTargetPosition; i<size-1; i++){
+            intValues[i] = intValues[i+1];
+        }
+        intValues[size-1] = 0;
+        size--;
+        System.out.println(Arrays.toString(intValues));
     }
 }
 
