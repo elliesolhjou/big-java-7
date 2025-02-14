@@ -71,6 +71,15 @@ public class Array{
             intValues[changeTarget] = newElement;
         }
         System.out.println(Arrays.toString(intValues));
+
+        //swapping every other two elements
+        for (int i = 0; i< size-1; i=i+2){
+            int temp;
+            temp = intValues[i];
+            intValues[i] = intValues[i+1];
+            intValues[i+1] = temp;
+        }
+        System.out.println(Arrays.toString(intValues));
     }
 }
 
