@@ -15,7 +15,12 @@ public class Die{
         generator = new Random();
     }
     //method to give rand numbers between one and sides count+1
-    public int throw(){
-        return 1+generator.nextInt(sides);
+    public int throwDie(){
+        int randNum = generator.nextInt(sides);
+        return 1+randNum;
+    }
+
+    public int dieSize(){
+        return sides;
     }
 }
