@@ -18,7 +18,11 @@ public class IsPalindromRecursiveHelper{
     public static void main(String[] args){
         boolean test1 = isPalindrom("adam");
         boolean test2 = isPalindrom("madam");
+        boolean test3 = isPalindrom("racecar");
+
         System.out.println(test1);
         System.out.println(test2);
+        System.out.println(test3);
+
     }
 }
