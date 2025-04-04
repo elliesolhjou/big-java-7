@@ -33,3 +33,24 @@ public class StringClass{
         }
     }
 }
+
+
+import java.util.*;
+
+public static ArrayList<Integer> oddVals(ArrayList<Integer> vals){
+    return oddValsHelper(vals, 0, vals.length-1);
+}
+public static ArrayList<Integer> oddValsHelper(ArrayList<Integer> vals, int start, int end){
+    ArrayList<Integer> result;
+    if (vals.length == 0){
+        result = new ArrayList<Integer>();
+    }
+    else{
+        result = oddValsHelper(vals, 0, end - 1);
+        if (vals[end] % 2 != 0){
+            result = result.add(vals[end]);
+        }
+    }
+    return result;
+}
+
