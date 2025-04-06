@@ -1,38 +1,33 @@
-public class IsPalindrom {
-    public static void main(String[] args) {
-        String sentence1 = "Madam, I'm Adam!";      
-        System.out.println(sentence1);
-        System.out.println("Palindrome: " + isPalindrome(sentence1));
-        
-        String sentence2 = "Sir, I'm Eve!";      
-        System.out.println(sentence2);
-        System.out.println("Palindrome: " + isPalindrome(sentence2));
+// 
+
+public class IsPalindrom{
+    public static boolean isPali(String word){
+        return isPaliHelper(word, 0, word.length() - 1);
     }
 
-    public static boolean isPalindrome(String s) {
-        int length = s.length();
-        
-        // Base case
-        if (length <= 1) {
+    public static boolean isPaliHelper(String word, int start, int end){
+        boolean result= false;
+        if (end <= start ){
             return true;
         }
-
-        char first = Character.toLowerCase(s.charAt(0));
-        char last = Character.toLowerCase(s.charAt(length - 1));
-
-        if (Character.isLetter(first) && Character.isLetter(last)) {
-            if (first == last) {
-                String smallerString = s.substring(1, length - 1);
-                return isPalindrome(smallerString);
-            } else {
-                return false;
-            }
-        } else if (!Character.isLetter(first)) {
-            String shorter = s.substring(1, length);
-            return isPalindrome(shorter);
-        } else {
-            String shorter = s.substring(0, length - 1);
-            return isPalindrome(shorter);
+        else if (word.charAt(start) != word.charAt(end)){
+            return false;
         }
+        else{
+            result = isPaliHelper(word, start + 1, end -1);
+
+        }
+        return result;
+    }
+    public static void main(String[] args){
+        String test1 = "MadaM";
+        String test2 = "sdkfj";
+        String test3 = "tenet";
+        String test4 = "Ellie";
+
+        System.out.println(isPali(test1));
+        System.out.println(isPali(test2));
+        System.out.println(isPali(test3));
+        System.out.println(isPali(test4));
     }
 }
